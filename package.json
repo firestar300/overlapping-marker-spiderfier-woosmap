@@ -1,5 +1,5 @@
 {
-  "name": "@mitori/woosmap-spiderfier",
+  "name": "@mit0ri/woosmap-spiderfier",
   "version": "0.0.1",
   "type": "module",
   "description": "Extension to add overlapping marker spiderfier on Woosmap.",
@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/firestar300/overlapping-marker-spiderfier-woosmap"
   },
-  "author": "Be API",
+  "author": "Milan Ricoul",
   "license": "MIT",
   "private": false,
   "files": [
