@@ -1,6 +1,6 @@
 {
   "name": "@mit0ri/woosmap-spiderfier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Extension to add overlapping marker spiderfier on Woosmap.",
   "repository": {
@@ -13,12 +13,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/woosmap-spiderfier.js",
-  "module": "./dist/woosmap-spiderfier.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/woosmap-spiderfier.js",
-      "require": "./dist/woosmap-spiderfier.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "sideEffects": false,
