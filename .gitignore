@@ -1,0 +1,9 @@
+## Node modules
+node_modules/
+
+## Build
+dist/
+
+## Use pnpm instead
+package-lock.json
+yarn.lock
