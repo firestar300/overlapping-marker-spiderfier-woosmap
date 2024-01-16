@@ -1,0 +1,66 @@
+{
+  "name": "@mitori/woosmap-spiderfier",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Extension to add overlapping marker spiderfier on Woosmap.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firestar300/overlapping-marker-spiderfier-woosmap"
+  },
+  "author": "Be API",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/woosmap-spiderfier.js",
+  "module": "./dist/woosmap-spiderfier.js",
+  "exports": {
+    ".": {
+      "import": "./dist/woosmap-spiderfier.js",
+      "require": "./dist/woosmap-spiderfier.js"
+    }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "woosmap",
+    "overlapping",
+    "spiderfier",
+    "marker",
+    "clustering"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@playwright/test": "^1.40.0",
+    "@wordpress/stylelint-config": "^20.0.3",
+    "autoprefixer": "^10.4.16",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "postcss": "^8.4.31",
+    "prettier": "^2.8.8",
+    "rollup-plugin-license": "^3.2.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-recess-order": "^3.1.0",
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.0.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "rollup"
+      ]
+    }
+  },
+  "volta": {
+    "node": "20.10.0"
+  }
+}
