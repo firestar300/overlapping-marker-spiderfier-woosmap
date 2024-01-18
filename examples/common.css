@@ -1,0 +1,99 @@
+/**
+ * Reset
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Set the sizing of an element to include it's border */
+}
+
+* {
+    padding: 0; /* Set the default padding to 0 */
+    margin: 0; /* Set the default margin to 0 */
+}
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none; /* Turn off numbered and unordered list decoration */
+}
+
+html:focus-within {
+    scroll-behavior: smooth; /* Make the scrolling inside of any scrollable element smooth */
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto; /* Makes link undelines look better */
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    max-width: 100%; /* Makes it responsive */
+    height: auto; /* Makes it responsive */
+    font-style: italic; /* If the images don't load it makes the alt decription look better */
+    vertical-align: middle; /* Makes text next to inline images look better */
+    background-repeat: no-repeat;
+    /* The background repeat and size are there if you want to load a picture first like a backroung image that is worse quality while the better quality image loads */
+    background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit; /* Makes these elements inherit fonts */
+}
+
+/* Turns off animation for people who don't want to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        transition: none;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body,
+html {
+    height: 100%; /* Makes the body element full screen */
+    scroll-behavior: smooth; /* Makes normal scrolling smooth */
+}
+
+/**
+   * Global styles
+   */
+.indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    padding: 10px;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto;
+    font-weight: 300;
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 100px 5px #000;
+    transform: translate3d(-50%, -5px, 0);
+}
+
+/**
+   * Map
+   */
+.mapboxgl-map {
+    width: 100%;
+    height: 100dvh;
+}

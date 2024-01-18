@@ -1,0 +1,104 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "node/86453022",
+        "properties": { "name": "The Apartment" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/122079566",
+        "properties": { "name": "Boot Inn" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/130156802",
+        "properties": { "name": "Le Monde Café Bar" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132186038",
+        "properties": { "name": "The Ballinteer House" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132228340",
+        "properties": { "name": "The Old Punch Bowl" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132775981",
+        "properties": { "name": "The Lombard" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132811831",
+        "properties": { "name": "Palmerstown House" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132814618",
+        "properties": { "name": "Silver Granite" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/132831833",
+        "properties": { "name": "The Ark" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/133193958",
+        "properties": { "name": "The Barge Bar" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "node/135547952",
+        "properties": { "name": "The Gallops" },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-5.931764000000001, 54.596963800000005]
+        }
+      }
+    ]
+}

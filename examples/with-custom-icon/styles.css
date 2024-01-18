@@ -1,0 +1,13 @@
+.spider-leg-pin {
+    width: 50px;
+    height: 44px;
+    transform: translate3d(-50%, -100%, 0);
+}
+
+.custom-marker .spider-leg-pin {
+    background-image: url(./marker.svg);
+}
+
+.custom-marker--selected .spider-leg-pin {
+    background-image: url(./marker-selected.svg);
+}
