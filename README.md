@@ -7,8 +7,8 @@ Spiral/Circle positioning logic taken from and credits go to [jawj/OverlappingMa
 
 ## Examples
 
-- [Sample example](https://codesandbox.io/p/devbox/woosmap-spiderfier-9pw24s?file=/index.html)
-- [Animated (WIP)](https://codesandbox.io/p/devbox/woosmap-spiderfier-animated-wnknnn?file=/index.html)
+- [Basic](https://codesandbox.io/p/devbox/woosmap-spiderfier-9pw24s?file=/index.html)
+- [Animated](https://codesandbox.io/p/devbox/woosmap-spiderfier-animated-wnknnn?file=/index.html)
 - [With clustering](https://codesandbox.io/p/devbox/woosmap-spiderfier-with-clustering-8j5swd?file=/index.html)
 - [With infowindow](https://codesandbox.io/p/devbox/woosmap-spiderfier-with-infowindow-gt2qsp?file=/index.html)
 - [With custom icon](https://codesandbox.io/p/devbox/woosmap-spiderfier-with-custom-icon-hxt6nv?file=/index.html)
