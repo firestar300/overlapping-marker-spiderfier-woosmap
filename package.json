@@ -1,6 +1,6 @@
 {
   "name": "@mit0ri/woosmap-spiderfier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Extension to add overlapping marker spiderfier on Woosmap.",
   "repository": {
