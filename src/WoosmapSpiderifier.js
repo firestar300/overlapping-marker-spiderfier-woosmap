@@ -97,7 +97,7 @@ class WoosmapSpiderifier {
    */
   unspiderfy() {
     const { options } = this
-    eachFn(this.previousSpiderLegs.reverse(), function (spiderLeg, index) {
+    eachFn(this.previousSpiderLegs.reverse(), (spiderLeg, index) => {
       if (options.animate) {
         spiderLeg.elements.container.style['transitionDelay'] =
           (options.animationSpeed / 1000 / this.previousSpiderLegs.length) * index + 's'
@@ -136,12 +136,14 @@ function generateSpiderLegParams(count) {
  * @returns {Array.<{angle: Number, legLength: Number, x: Array, y: Number}>}
  */
 function generateSpiralParams(count) {
-  const { options } = this
+  const {
+    options: { spiralLengthStart, spiralFootSeparation, spiralLengthFactor },
+  } = this
   const twoPi = Math.PI * 2
-  let legLength = options.spiralLengthStart + 50
+  let legLength = spiralLengthStart + 50
   let angle = 0
   return mapTimesFn(count, function (index) {
-    angle = angle + (options.spiralFootSeparation / legLength + index * 0.0005)
+    angle = angle + (spiralFootSeparation / legLength + index * 0.0005)
     const pt = {
       x: legLength * Math.cos(angle),
       y: legLength * Math.sin(angle),
@@ -149,7 +151,7 @@ function generateSpiralParams(count) {
       legLength,
       index,
     }
-    legLength = legLength + (twoPi * options.spiralLengthFactor) / angle
+    legLength = legLength + (twoPi * spiralLengthFactor) / angle
     return pt
   })
 }
