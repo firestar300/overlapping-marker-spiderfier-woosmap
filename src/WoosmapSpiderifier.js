@@ -1,9 +1,6 @@
-const noop = function () {}
-const UTILS = {
-  each: eachFn,
-  mapTimes: mapTimesFn,
-  eachTimes: eachTimesFn,
-}
+import './WoosmapSpiderifier.css'
+import { eachFn, mapTimesFn, noop } from './utils'
+
 const DEFAULT_OPTIONS = {
   animate: false, // to animate the spiral
   animationSpeed: 0, // animation speed in milliseconds
@@ -21,6 +18,9 @@ const DEFAULT_OPTIONS = {
   // ---
 }
 
+/**
+ * Main class
+ */
 class WoosmapSpiderifier {
   constructor(map, options) {
     if (typeof woosmap === 'undefined') {
@@ -35,10 +35,17 @@ class WoosmapSpiderifier {
     this.generateSpiralParams = generateSpiralParams.bind(this)
     this.generateSpiderLegParams = generateSpiderLegParams.bind(this)
     this.each = function (callback) {
-      UTILS.each(this.previousSpiderLegs, callback)
+      eachFn(this.previousSpiderLegs, callback)
     }
   }
 
+  /**
+   * Display overlapping spiderfier from a group of features array
+   *
+   * @param {Object} latlng object of lat and lng
+   *
+   * @param {Array} features feature collection array
+   */
   spiderfy(latlng, features) {
     const { options } = this
     const spiderLegParams = this.generateSpiderLegParams(features.length)
@@ -68,13 +75,13 @@ class WoosmapSpiderifier {
       return spiderLeg
     })
 
-    UTILS.each(spiderLegs.reverse(), (spiderLeg) => {
+    eachFn(spiderLegs.reverse(), (spiderLeg) => {
       spiderLeg.woosmapMarker.setMap(this.map)
     })
 
     if (options.animate) {
       setTimeout(function () {
-        UTILS.each(spiderLegs.reverse(), function (spiderLeg, index) {
+        eachFn(spiderLegs.reverse(), function (spiderLeg, index) {
           spiderLeg.elements.container.className = (spiderLeg.elements.container.className || '').replace('initial', '')
           spiderLeg.elements.container.style['transitionDelay'] =
             (options.animationSpeed / 1000 / spiderLegs.length) * index + 's'
@@ -85,9 +92,12 @@ class WoosmapSpiderifier {
     this.previousSpiderLegs = spiderLegs
   }
 
+  /**
+   * Hide current group of overlapping spiderfier
+   */
   unspiderfy() {
     const { options } = this
-    UTILS.each(this.previousSpiderLegs.reverse(), function (spiderLeg, index) {
+    eachFn(this.previousSpiderLegs.reverse(), function (spiderLeg, index) {
       if (options.animate) {
         spiderLeg.elements.container.style['transitionDelay'] =
           (options.animationSpeed / 1000 / this.previousSpiderLegs.length) * index + 's'
@@ -103,6 +113,13 @@ class WoosmapSpiderifier {
   }
 }
 
+/**
+ * Define spider leg param according to the count and circleSpiralSwitchover option
+ *
+ * @param {Number} count number of markers
+ *
+ * @returns {Function}
+ */
 function generateSpiderLegParams(count) {
   if (count >= this.options.circleSpiralSwitchover) {
     return this.generateSpiralParams(count)
@@ -111,12 +128,19 @@ function generateSpiderLegParams(count) {
   }
 }
 
+/**
+ * Generate list of spiral leg params
+ *
+ * @param {Number} count
+ *
+ * @returns {Array.<{angle: Number, legLength: Number, x: Array, y: Number}>}
+ */
 function generateSpiralParams(count) {
   const { options } = this
   const twoPi = Math.PI * 2
-  const legLength = options.spiralLengthStart + 50
+  let legLength = options.spiralLengthStart + 50
   let angle = 0
-  return UTILS.mapTimes(count, function (index) {
+  return mapTimesFn(count, function (index) {
     angle = angle + (options.spiralFootSeparation / legLength + index * 0.0005)
     const pt = {
       x: legLength * Math.cos(angle),
@@ -130,13 +154,20 @@ function generateSpiralParams(count) {
   })
 }
 
+/**
+ * Generate list of circle leg params
+ *
+ * @param {Number} count
+ *
+ * @returns {Array.<{angle: Number, legLength: Number, x: Array, y: Number}>}
+ */
 function generateCircleParams(count) {
   const twoPi = Math.PI * 2
   const circumference = this.options.circleFootSeparation * (2 + count)
   const legLength = circumference / twoPi // = radius from circumference
   const angleStep = twoPi / count
 
-  return UTILS.mapTimes(count, function (index) {
+  return mapTimesFn(count, function (index) {
     const angle = index * angleStep
 
     return {
@@ -149,6 +180,15 @@ function generateCircleParams(count) {
   })
 }
 
+/**
+ * Create HTML markup for spiderified markers
+ *
+ * @param {Array.<{angle: Number, legLength: Number, x: Array, y: Number}>} spiderLegParam
+ *
+ * @param {HTMLElement} markerElement
+ *
+ * @returns {{container: HTMLElement, line: HTMLElement, pin: HTMLElement}}
+ */
 function createMarkerElements(spiderLegParam, markerElement) {
   const { options } = this
   const containerElem = markerElement
@@ -175,34 +215,6 @@ function createMarkerElements(spiderLegParam, markerElement) {
   lineElem.style.transform = 'rotate(' + (spiderLegParam.angle - Math.PI / 2) + 'rad)'
 
   return { container: containerElem, line: lineElem, pin: pinElem }
-}
-
-// Utility
-function eachFn(array, iterator) {
-  let i = 0
-  if (!array || !array.length) {
-    return []
-  }
-  for (i = 0; i < array.length; i++) {
-    iterator(array[i], i)
-  }
-}
-
-function eachTimesFn(count, iterator) {
-  if (!count) {
-    return []
-  }
-  for (var i = 0; i < count; i++) {
-    iterator(i)
-  }
-}
-
-function mapTimesFn(count, iterator) {
-  let result = []
-  eachTimesFn(count, function (i) {
-    result.push(iterator(i))
-  })
-  return result
 }
 
 export default WoosmapSpiderifier

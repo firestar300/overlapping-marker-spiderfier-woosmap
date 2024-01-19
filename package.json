@@ -1,12 +1,13 @@
 {
   "name": "@mit0ri/woosmap-spiderfier",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "type": "module",
   "description": "Extension to add overlapping marker spiderfier on Woosmap.",
   "repository": {
     "type": "git",
     "url": "https://github.com/firestar300/overlapping-marker-spiderfier-woosmap"
   },
+  "homepage": "https://milanricoul.com",
   "author": "Milan Ricoul",
   "license": "MIT",
   "private": false,
@@ -30,28 +31,26 @@
     "clustering"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open=/examples/index.html",
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@playwright/test": "^1.40.0",
-    "@wordpress/stylelint-config": "^20.0.3",
-    "autoprefixer": "^10.4.16",
-    "babel-jest": "^27.5.1",
-    "eslint": "^8.54.0",
+    "@wordpress/stylelint-config": "^21.32.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.33",
     "prettier": "^2.8.8",
     "rollup-plugin-license": "^3.2.0",
     "stylelint": "^14.16.1",
     "stylelint-config-recess-order": "^3.1.0",
-    "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
+    "vite": "^5.0.11",
+    "vite-plugin-css-injected-by-js": "^3.3.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.33"
   },
   "pnpm": {
     "peerDependencyRules": {
