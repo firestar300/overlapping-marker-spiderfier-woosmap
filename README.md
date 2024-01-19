@@ -1,9 +1,9 @@
 # Overlapping Marker Spiderfier for Woosmap
 
 Extension to add overlapping marker spiderfier on Woosmap.
-Spiderify markers on Woosmap using marker overlays. Note it does not create the spiderfication in the canvas but on a overlay on top of the canvas. This uses [`woosmap.map.Marker()`](https://developers.woosmap.com/products/map-api/guides/markers/) to create markers and spider legs.
+Spiderify markers on Woosmap using marker overlays. Note it does not create the spiderification in the canvas but on an overlay on top of the canvas. This uses [`woosmap.map.Marker()`](https://developers.woosmap.com/products/map-api/guides/markers/) to create markers and spider legs.
 
-Spiral/Circle positioning logic taken from and credits goes to [jawj/OverlappingMarkerSpiderfier](https://github.com/jawj/OverlappingMarkerSpiderfier).
+Spiral/Circle positioning logic taken from and credits go to [jawj/OverlappingMarkerSpiderfier](https://github.com/jawj/OverlappingMarkerSpiderfier).
 
 ## Examples
 
@@ -15,13 +15,13 @@ Spiral/Circle positioning logic taken from and credits goes to [jawj/Overlapping
 
 ## Get started
 
-First, install dependency in your project.
+First, install the dependency in your project.
 
 ```bash
 yarn add @mit0ri/woosmap-spiderfier
 ```
 
-Next, import the module in your JS file and instantiate `WoosmapSpiderifier`.
+Next, import the module into your JS file and instantiate WoosmapSpiderifier.
 
 ```js
 import { WoosmapSpiderifier } from '@mit0ri/woosmap-spiderfier'
@@ -38,16 +38,16 @@ const features = [
 // Instantiate a Woosmap map
 const map = new woosmap.map.Map(document.getElementById('map'), MAP_OPTIONS)
 
-// Instantiate WoosmapSpiderifier with the map as first param and options as second param
+// Instantiate WoosmapSpiderifier with the map as the first parameter and options as the second parameter.
 const spiderifier = new WoosmapSpiderifier(map, {
     circleFootSeparation: 60,
     circleSpiralSwitchover: 10,
 })
 
-// Spiderfies and displays given markers on the specified lat lng.
+// Spiderfies and displays given markers on the specified latitude and longitude.
 spiderfier.spiderfy([-74.50, 40], features)
 
-// On map click, unspiderfies markers if any spiderfied already.
+// On map click, unspiderfies markers if any are already spiderfied.
 map.addListener('click', () => {
     spiderfier.unspiderfy()
 })
