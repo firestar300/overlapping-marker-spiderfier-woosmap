@@ -13,6 +13,7 @@ function initMap() {
 
   const spiderifier = new WoosmapSpiderifier(map, {
     animate: true,
+    animationSpeed: 600,
     spiralLengthFactor: 1.6,
   })
 
@@ -27,11 +28,16 @@ function initMap() {
           <circle cx="120" cy="120" opacity=".3" r="80" />
           <circle cx="120" cy="120" opacity=".2" r="110" />
         </svg>`)
+        const iconSize = 65
         const marker = new window.woosmap.map.Marker({
           position: latlng,
           icon: {
             url: `data:image/svg+xml;base64,${svg}`,
-            scaledSize: new window.woosmap.map.Size(65, 65),
+            scaledSize: new window.woosmap.map.Size(iconSize, iconSize),
+            anchor: {
+              x: iconSize / 2,
+              y: iconSize / 2,
+            },
           },
           map,
         })
