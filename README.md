@@ -61,7 +61,7 @@ new WoosmapSpiderifier(map, options)
 
 | param     | description                                   |
 |-----------|-----------------------------------------------|
-| `map`     | Woosmap map instance `new woosmap.map.Map()`. |
+| `map`     | Woosmap map instance [`new woosmap.map.Map()`](https://developers.woosmap.com/products/map-api/get-started/#overview). |
 | `options` | Options object. See below.                    |
 
 ## Options
