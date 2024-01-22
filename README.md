@@ -75,7 +75,7 @@ new WoosmapSpiderifier(map, options)
 | `spiralFootSeparation`   | _Number_   | `28`       | Related to size of spiral.                                                                                    |
 | `spiralLengthStart`      | _Number_   | `15`       |                                                                                                               |
 | `spiralLengthFactor`     | _Number_   | `4`        |                                                                                                               |
-| `customPin`              | _Boolean_  | `false`    | If `false`, a custom icon will be displayed. If `true`, you have to provide a custom icon in your CSS file.   |
+| `customPin`              | _Boolean_  | `false`    | If `false`, a default icon will be displayed. If `true`, you have to provide a custom icon in your CSS file.   |
 | `onInit`                 | _Function_ | `() => {}` | - @param0: `spiderLeg`                                                                                        |
 | `onClick`                | _Function_ | `() => {}` | - @param0: `clickEvent` - @param1: `spiderLeg`                                                                |
 
