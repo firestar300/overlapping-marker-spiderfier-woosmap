@@ -1,3 +1,192 @@
-.todo {
-    color: red;
+@import "./reset.css";
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+body {
+    color: #222f3e;
+    background-color: #feca57;
+}
+
+div {
+    position: relative;
+}
+
+div,
+li {
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+
+h1 {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 100vw;
+    padding: 0 60px;
+    font-size: clamp(2rem, -12.2222rem + 29.6296vw, 10rem);
+    color: #ee5253;
+}
+
+h1 span:nth-child(2) {
+    font-style: italic;
+    font-weight: 500;
+    color: #0abde3;
+    text-align: center;
+}
+
+h1 span:last-child {
+    font-weight: 300;
+    color: #10ac84;
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    /* stylelint-disable-next-line color-named */
+    text-decoration-color: rebeccapurple;
+    text-decoration-skip-ink: none;
+}
+
+p {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    font-size: clamp(2rem, 2rem + 0vw, 2rem);
+    text-align: center;
+}
+
+p::after {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    z-index: -1;
+    width: 0%;
+    height: 2px;
+    content: "";
+    background-color: #ee5253;
+    transform: translate3d(-50%, 0, 0);
+}
+
+li a {
+    position: sticky;
+    top: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: clamp(2rem, -3.3333rem + 11.1111vw, 5rem);
+    color: inherit;
+    text-decoration: none;
+    transition: gap 300ms ease, color 300ms ease;
+}
+
+li a:hover {
+    gap: 60px;
+    color: #341f97;
+}
+
+li a:hover span {
+    gap: 60px;
+}
+
+li a::after {
+    content: "→";
+    transform: translate3d(0, 5px, 0);
+}
+
+li svg {
+    width: 120px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+        body {
+            animation: bgcolor linear both;
+            animation-timeline: scroll();
+        }
+
+        h1 span {
+            animation: fadeout linear both;
+            animation-timeline: view();
+            animation-range: 75vh 100vh;
+        }
+
+        p {
+            opacity: 0;
+            animation: fadein linear both, scale-a-lil linear both;
+            animation-timeline: view();
+            animation-range: 15vh 50vh, 15vh 100vh;
+        }
+
+        p::after {
+            animation: linewidth linear both;
+            animation-timeline: view();
+            animation-range: 25vh 100vh;
+        }
+
+        li {
+            animation: scale-a-lil linear both;
+            animation-timeline: view();
+            animation-range: 25vh 100vh;
+        }
+    }
+}
+
+@keyframes bgcolor {
+    0% {
+        background-color: #feca57;
+    }
+
+    20% {
+        background-color: #ff9f43;
+    }
+
+    40% {
+        background-color: #ff6b6b;
+    }
+
+    60% {
+        background-color: #ff9ff3;
+    }
+
+    80% {
+        background-color: #1dd1a1;
+    }
+
+    100% {
+        background-color: #c8d6e5;
+    }
+}
+
+@keyframes fadeout {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes linewidth {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes scale-a-lil {
+    from {
+        scale: .25;
+    }
 }

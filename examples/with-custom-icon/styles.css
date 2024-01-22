@@ -11,3 +11,8 @@
 .custom-marker--selected .spider-leg-pin {
     background-image: url(./marker-selected.svg);
 }
+
+.spider-leg-container.custom-marker--selected .spider-leg-line {
+    background-color: #ff6b81;
+    opacity: 1;
+}

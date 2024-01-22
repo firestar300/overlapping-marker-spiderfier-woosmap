@@ -13,6 +13,7 @@ function initMap() {
 
   const spiderifier = new WoosmapSpiderifier(map, {
     animate: true,
+    animationSpeed: 600,
     spiralLengthFactor: 1.6,
   })
 
